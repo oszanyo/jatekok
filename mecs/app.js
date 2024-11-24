@@ -86,7 +86,7 @@ function checkSolution() {
     const placeholder = document.getElementById('solution-placeholder'); // Keresd meg a helyettesítőt
     
     if (allCorrect) {
-        placeholder.textContent = 'Helyes megoldás 🥳'; // Ha minden helyes, írd ki, hogy helyes
+        placeholder.textContent = 'Helyes megoldás :)'; // Ha minden helyes, írd ki, hogy helyes
         placeholder.style.backgroundColor = 'rgba(0, 255, 0, 0.3)'; // Állítsd a háttérszínt zöldre
     } else {
         placeholder.textContent = 'Helytelen megoldás'; // Ha nem helyes, írd ki, hogy helytelen
