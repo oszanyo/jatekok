@@ -1,0 +1,202 @@
+body {
+    font-family: Arial, sans-serif; /* A betűtípus, amit használunk az oldalon */
+    display: flex; /* A tartalom rugalmas elrendezése */
+    justify-content: center; /* Középre helyezi a tartalmat vízszintesen */
+    align-items: flex-start; /* A tartalmat a tetejére igazítja */
+    margin: 0; /* Eltávolítja az alapértelmezett margót */
+    padding-top: 0px; /* Tetejére adunk párnát, ha szükséges */
+    background-color: #f0f4f8; /* Világos háttérszín */
+    background-image: radial-gradient(circle at 50% 50%, rgba(0, 128, 0, 0.1), transparent 20%),
+                      radial-gradient(circle at 30% 70%, rgba(0, 200, 0, 0.1), transparent 20%),
+                      radial-gradient(circle at 70% 30%, rgba(0, 180, 0, 0.1), transparent 20%); /* Szerves mintázat a háttérben */
+}
+
+.background-layer {
+    background-color: rgba(255, 255, 255, 0.8); /* Világos háttérszín a rétegnek */
+    border-radius: 10px; /* Lekerekített sarkok */
+    padding: 20px; /* Tér a konténer körül */
+    max-width: 750px; /* Maximális szélesség beállítása */
+    width: 90%; /* Reszponzív szélesség beállítása */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); /* Árnyék a mélységért */
+    margin: 20px auto 40px; /* Középre helyezi a réteget vízszintesen és alulra margót ad */
+}
+
+.container {
+    text-align: center; /* Középre igazítja a szöveget */
+    margin-top: 20px; /* Margót ad az alján, hogy középen legyen a kép alatt */
+}
+
+#image-container {
+    position: relative; /* A kép konténer pozíciójának beállítása */
+    display: inline-block; /* A tartalom egy vonalban jelenik meg */
+    margin-bottom: 20px; /* Margó az alján */
+}
+
+.content-container {
+    display: flex; /* Rugalmas elrendezés a tartalomnak */
+    justify-content: space-between; /* Tér a kép és a címkék között */
+    align-items: flex-start; /* Mindkét konténert a tetejére igazítja */
+    margin-bottom: 20px; /* Margó az alján */
+}
+
+#image {
+    width: 500px; /* A kép szélessége */
+    height: auto; /* Az arányok megtartása */
+}
+
+.drop-zone {
+    position: absolute; /* Az elemet abszolút pozícióba helyezi */
+    height: 32px; /* Minden cseppzóna magassága */
+    width: 70px; /* Minden cseppzóna szélessége */
+    background-color: rgba(0, 128, 0, 0.2); /* Enyhén átlátszó zöld a cseppzónákhoz */
+    border: 2px dashed #006400; /* Sötétebb zöld a szaggatott kerethez */
+    border-radius: 5px; /* Lekerekített sarkok */
+    display: flex; /* Rugalmas elrendezés a címkéhez */
+    justify-content: center; /* Középre helyezi a címkét a cseppzónában */
+    align-items: center; /* Középre helyezi a címkét függőlegesen */
+}
+
+#slot1 {
+    top: 105px; /* Az első cseppzóna függőleges elhelyezése */
+    left: 50px; /* Az első cseppzóna vízszintes elhelyezése */
+}
+
+#slot2 {
+	/* --slot-width:120px; */
+	/* width: var(--slot-width); */
+    top: 100px; /* A második cseppzóna függőleges elhelyezése */
+    left: 400px; /* A második cseppzóna vízszintes elhelyezése */
+}
+
+#slot3 {
+    top: 175px; /* A harmadik cseppzóna függőleges elhelyezése */
+    left: 20px; /* A harmadik cseppzóna vízszintes elhelyezése */
+}
+
+#slot4 {
+    top: 35px; /* A negyedik cseppzóna függőleges elhelyezése */
+    left: 160px; /* A negyedik cseppzóna vízszintes elhelyezése */
+}
+
+#slot5 {
+    top: 290px; /* Az ötödik cseppzóna függőleges elhelyezése */
+    left: 30px; /* Az ötödik cseppzóna vízszintes elhelyezése */
+}
+
+/* A címkék tároló stílusa */
+.labels-container {
+    display: flex; /* Rugalmas elrendezés a címkéknek */
+    flex-direction: column; /* A címkék függőlegesen helyezkednek el */
+    justify-content: flex-start; /* Az elemeket a tetejére igazítja */
+    align-items: center; /* Középre igazítja az elemeket */
+    gap: 10px; /* Tér a címkék között */
+    margin: 0 auto 20px; /* Középre helyezi és alulra margót ad */
+	margin-left: 20px; /* Balra margót ad */
+    border: 2px solid #4CAF50; /* Zöld keret a kezdeti tárolónak */
+    border-radius: 10px; /* Lekerekített sarkok a kezdeti tárolónak */
+    padding: 10px; /* Párna a tároló körül */
+    width: calc(100% - 40px); /* A háttérréteg teljes szélessége mínusz a párna */
+    max-width: 100%; /* Biztosítja, hogy ne lépje túl a háttérréteget */
+    height: 305px; /* A tároló magassága */
+    background-color: rgba(255, 255, 255, 0.9); /* Enyhén átlátszó fehér háttér */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Finom árnyék a mélységért */
+	overflow: auto; /* Görgethető tartalom, ha túllép a méreten */
+}
+
+/* A címkék stílusa */
+.label {
+	font-size: 13px; /* A címke betűmérete */
+    background-color: #4CAF50; /* Zöld háttér a címkékhez */
+    color: white; /* Fehér szöveg a kontrasztért */
+    cursor: grab; /* Húzásra utaló kurzor */
+    border: 2px solid #388E3C; /* Sötétebb zöld a címke keretéhez */
+    width: 150px;  /* A címke szélessége */
+    height: 40px; /* A címke magassága */
+    text-align: center; /* Középre igazítja a szöveget */
+    display: flex; /* Rugalmas elrendezés a címke tartalmának */
+    justify-content: center; /* Középre helyezi a tartalmat vízszintesen */
+    align-items: center; /* Középre helyezi a tartalmat függőlegesen */
+    box-sizing: border-box; /* Biztosítja, hogy a párna és a keret belekerüljön a szélességbe/magasságba */
+    padding: 0; /* Eltávolítja a párnát, hogy ne lépjen ki a címke */
+    user-select: none; /* Megakadályozza a címke tartalmának kijelölését */
+}
+
+/* Ellenőrző szekció stílusa */
+.check-solution-container {
+    display: flex; /* Rugalmas elrendezés az elemeknek */
+    align-items: center; /* Középre helyezi az elemeket függőlegesen */
+    justify-content: center; /* Középre helyezi a gombot és a helyettesítőt */
+    margin: 20px 0; /* Margó a térközért */
+}
+
+#check-solution {
+    background-color: #4CAF50; /* Ugyanaz a zöld, mint a címkéké */
+    color: white; /* Fehér szöveg a kontrasztért */
+    border: none; /* Eltávolítja az alapértelmezett keretet */
+    border-radius: 5px; /* Lekerekített sarkok a gombnál */
+    padding: 15px 20px; /* Magasabb gomb a párnázás miatt */
+    font-size: 18px; /* A betűméret növelése */
+    cursor: pointer; /* Kéz kurzor, ha fölé viszik az egeret */
+    display: flex; /* Rugalmas elrendezés a gomb tartalmának */
+    align-items: center; /* Középre helyezi a tartalmat függőlegesen */
+    justify-content: center; /* Középre helyezi a tartalmat vízszintesen */
+    margin-right: 10px; /* Tér a gomb és a helyettesítő között */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Finom árnyék a mélységért */
+}
+
+#check-solution:hover {
+    background-color: #388E3C; /* Sötétebb zöld, amikor fölé viszik az egeret */
+}
+
+/* Helyettesítő alapállapota */
+#solution-placeholder {
+    background-color: rgba(255, 255, 0, 0.3); /* Világos sárga háttér */
+    color: #555; /* Szöveg színe */
+    padding: 10px; /* Párna a szöveg körül */
+    border-radius: 5px; /* Lekerekített sarkok a helyettesítőnél */
+    width: 200px; /* Fix szélesség */
+    height: 40px; /* A gomb magasságának megfelelő magasság */
+    display: flex; /* Rugalmas elrendezés a szöveg középre helyezéséhez */
+    justify-content: center; /* Középre helyezi a szöveget vízszintesen */
+    align-items: center; /* Középre helyezi a szöveget függőlegesen */
+    font-size: 16px; /* Betűméret a helyettesítő szöveghez */
+    margin-left: 10px; /* Tér a gomb és a helyettesítő között */
+    
+    /* Zökkenőmentes háttérszín és átalakulás változások */
+    transition: background-color 0.5s ease, transform 0.3s ease;
+}
+
+/* Ha a megoldás helyes, zöld lesz és skálázási hatás lesz */
+#solution-placeholder.good-solution {
+    background-color: rgba(0, 255, 0, 0.3); /* Zöld háttér */
+    transform: scale(1.1); /* Enyhén megnöveljük a méretet */
+}
+
+/* Ha a megoldás hibás, piros lesz és skálázási hatás lesz */
+#solution-placeholder.bad-solution {
+    background-color: rgba(255, 0, 0, 0.3); /* Piros háttér */
+    transform: scale(1.1); /* Enyhén megnöveljük a méretet */
+}
+
+.arrow {
+    margin-left: 10px; /* Tér a szöveg és a nyíl között */
+    font-size: 24px; /* A nyíl méretének növelése */
+}
+
+#reset-button {
+    background-color: #f44336; /* Piros szín a reset gombhoz */
+    color: white; /* Fehér szöveg a kontrasztért */
+    border: none; /* Eltávolítja az alapértelmezett keretet */
+    border-radius: 5px; /* Lekerekített sarkok a gombnál */
+    padding: 15px 20px; /* Magasabb gomb a párnázás miatt */
+    font-size: 18px; /* A betűméret növelése */
+    cursor: pointer; /* Kéz kurzor, ha fölé viszik az egeret */
+    margin-top: 10px; /* Tér a reset gomb és az ellenőrző gomb között */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Finom árnyék a mélységért */
+    display: block; /* Blokk elem, hogy új sort kapjon */
+    width: 100%; /* Teljes szélességű gomb */
+}
+
+#reset-button:hover {
+    background-color: #d32f2f; /* Sötétebb piros, amikor fölé viszik az egeret */
+}
