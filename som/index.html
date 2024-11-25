@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"> <!-- A fájl karakterkódolása -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Az oldal méretének beállítása, hogy jól nézzen ki minden eszközön -->
+    <title>Drag and Drop Application</title> <!-- Az oldal címe, amit a böngésző fülén látunk -->
+    <link rel="stylesheet" href="styles.css"> <!-- A stíluslap, ami megmondja, hogy az oldal hogyan nézzen ki -->
+</head>
+<body>
+    <div class="background-layer"> <!-- A háttér réteg, ami alatta van mindennek -->
+        <div class="container"> <!-- A tartalom konténer, ami mindent összefog -->
+            <h1>Som részei</h1> <!-- A főcím az oldal tetején -->
+            <p>Húzd a fogalmakat az ábra megfelelő helyére!</p> <!-- Itt van a szöveg, ami elmondja, mit kell csinálni -->
+            
+            <div class="content-container"> <!-- A tartalom tárolására szolgáló réteg -->
+				<div id="image-container"> <!-- Itt van a kép és a cseppzónák -->
+					<img src="your-image.jpg" alt="Placeholder Image" id="image"> <!-- A kép, amit használunk -->
+					<div class="drop-zone" id="slot1" data-label="Rügy"></div> <!-- Az első cseppzóna -->
+					<div class="drop-zone" id="slot2" data-label="Főér"></div> <!-- A második cseppzóna -->
+					<div class="drop-zone" id="slot3" data-label="Oldalerek"></div> <!-- A harmadik cseppzóna -->
+					<div class="drop-zone" id="slot4" data-label="Nyélbe keskenyedő levélváll"></div> <!-- A negyedik cseppzóna -->
+					<div class="drop-zone" id="slot5" data-label="Ép levélszél"></div> <!-- Az ötödik cseppzóna -->
+					<div class="drop-zone" id="slot6" data-label="Levélcsúcs"></div> <!-- Az ötödik cseppzóna -->
+					<div class="drop-zone" id="slot7" data-label="Levélnyél"></div> <!-- Az ötödik cseppzóna -->
+					<div class="drop-zone" id="slot8" data-label="Levélalap"></div> <!-- Az ötödik cseppzóna -->
+				</div>
+
+				<!-- Kezdeti tároló a címkék számára (most a kép mellett) -->
+				<div class="labels-container" id="initial-container"> <!-- Itt tároljuk a címkéket -->
+					<div class="label" draggable="true" id="label1">Rügy</div> <!-- Az első címke, amit húzni lehet -->
+					<div class="label" draggable="true" id="label2">Főér</div> <!-- A második címke -->
+					<div class="label" draggable="true" id="label3">Oldalerek</div> <!-- A harmadik címke -->
+					<div class="label" draggable="true" id="label4">Nyélbe keskenyedő levélváll</div> <!-- A negyedik címke -->
+					<div class="label" draggable="true" id="label5">Ép levélszél</div> <!-- Az ötödik címke -->
+					<div class="label" draggable="true" id="label6">Levélcsúcs</div> <!-- Az ötödik címke -->
+					<div class="label" draggable="true" id="label7">Levélnyél</div> <!-- Az ötödik címke -->
+					<div class="label" draggable="true" id="label8">Levélalap</div> <!-- Az ötödik címke -->
+				</div>
+			</div>
+
+            <!-- Eredmény ellenőrző szekció -->
+            <div class="check-solution-container"> <!-- A helyes megoldás ellenőrzésére szolgáló réteg -->
+                <button id="check-solution"> <!-- A gomb, amivel ellenőrizni tudjuk a választ -->
+                    Ellenőrzés!
+                </button>
+                <div id="solution-placeholder"></div> <!-- Itt jelenik meg az ellenőrzés eredménye -->
+            </div>
+			
+			<!-- Reset gomb szekció -->
+			<div class="reset-button-container"> <!-- A reset gomb tárolására szolgáló réteg -->
+			</div>
+			<button id="reset-button">Újrakezdés</button> <!-- A gomb, amivel visszaállíthatjuk az összes címkét -->
+
+        </div>
+    </div>
+    <script src="app.js"></script> <!-- Az JavaScript fájl, ami a működést irányítja -->
+</body>
+</html>
