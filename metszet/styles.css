@@ -48,7 +48,7 @@ body {
     position: absolute; /* Az elemet abszolút pozícióba helyezi */
     height: 32px; /* Minden cseppzóna magassága */
     width: 70px; /* Minden cseppzóna szélessége */
-    background-color: rgba(0, 128, 0, 0.2); /* Enyhén átlátszó zöld a cseppzónákhoz */
+    background-color: rgba(0, 128, 0, 0.5); /* Enyhén átlátszó zöld a cseppzónákhoz */
     border: 2px dashed #006400; /* Sötétebb zöld a szaggatott kerethez */
     border-radius: 5px; /* Lekerekített sarkok */
     display: flex; /* Rugalmas elrendezés a címkéhez */
